@@ -1,64 +1,66 @@
 <!doctype html>
-<html lang="en">
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
-
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 {% if meta.description %}
     <meta name="description" content="{{ meta.description }}"> 
 {% endif %}{% if meta.robots %}
     <meta name="robots" content="{{ meta.robots }}">
 {% endif %}
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
     <title>{% if meta.title %}{{ meta.title }} | {% endif %}{{ site_title }}</title>
 
-    <!-- <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css"> -->
-    <link rel="stylesheet" href="{{ theme_url }}/pure-min.css">
-    <link rel="stylesheet" href="{{ theme_url }}/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ theme_url }}/normalize.css">
+    <link rel="stylesheet" href="{{ theme_url }}/normalize-opentype.css">
+    <link rel="stylesheet" href="{{ theme_url }}/main.css">
 
 </head>
 <body>
 
+<!--[if lt IE 9]>
+    <p class="browsehappy"><a href="http://browsehappy.com/">You're using an old browser, please update for a better experience. &rarr;</a></p>
+<![endif]-->
 
-<div id="layout">
+<div class="page">
 
-    <a href="#menu" id="menuLink" class="menu-link">
-        <span></span>
-    </a>
-
-    <div id="menu">
-        <div class="pure-menu pure-menu-open">
-            <a class="pure-menu-heading" href="{{ base_url }}">{{ site_title }}</a>
+    <header class="header">
+        <h1><a href="{{ base_url }}">{{ site_title }}</a></h1>
+        <nav class="header__navigation">
             {{ at_navigation.navigation }}
-        </div>
-    </div>
+        </nav><!-- .header__navigation -->
+    </header><!-- .header -->
 
-    <div id="main">
-        <div class="header">
+    <main class="content">
+
+        <header class="content__header">
             <h1>{{ meta.title }}</h1>
             <h2>{{ meta.description }}</h2>
-        </div>
+        </header><!-- .content__header -->
 
-        <div class="content">
+        <div class="content__article">
             {{ content }}
-        </div>
-    </div>
+        </div><!-- .content__article -->
 
-    <div id="footer">
-        <div class="content">
+    </main><!-- .content -->
+
+    <footer class="footer">
+        <div class="footer__content">
             <p>
                 Plastic Habitat is a reference and playground for design and development.<br />
                 A project by <a href="http://slurfhondje.nl/">Tim van Bergenhenegouwen</a> from <a href="http://zomnium.com/">Zomnium</a>.
             </p>
-            <p><small>&copy; Copyright 2013.</small></p>
-        </div>
-    </div>
+            <p><small>&copy; Copyright 2014.</small></p>
+        </div><!-- .footer__content -->
+    </footer><!-- .footer -->
 
-</div>
-
+</div><!-- .page -->
 
 <script src="{{ theme_url }}/ui.js"></script>
-
 
 </body>
 </html>
