@@ -14,7 +14,7 @@
 
     <title>{% if meta.title %}{{ meta.title }} | {% endif %}{{ site_title }}</title>
 
-    <link href='http://fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic|Lato:400,700,400italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{{ theme_url }}/normalize.css">
     <link rel="stylesheet" href="{{ theme_url }}/normalize-opentype.css">
     <link rel="stylesheet" href="{{ theme_url }}/main.css">
@@ -29,10 +29,12 @@
 <div class="page">
 
     <header class="header">
-        <h1><a href="{{ base_url }}">{{ site_title }}</a></h1>
-        <nav class="header__navigation">
+        <h1 class="header__branding">
+            <a href="{{ base_url }}" class="header__branding__logo">{{ site_title }}</a>
+        </h1><!-- .header__branding -->
+        <nav class="navigation">
             {{ at_navigation.navigation }}
-        </nav><!-- .header__navigation -->
+        </nav><!-- .navigation -->
     </header><!-- .header -->
 
     <main class="content">
