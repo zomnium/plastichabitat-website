@@ -1,7 +1,7 @@
 /**
  * Plastic Habitat
  * Playground for design and development
- * http://plastichabitat.com
+ * http://plastichabitat.com/
  */
 
 /**
@@ -99,34 +99,59 @@ pre code {
 
 .page {
 	background-color: #fff;
-/*	border: .75em solid #eee;*/
-	border: .9em solid #eee;
+	border: .75em solid #eee;
 	padding: 1.2em;
 }
 
+@media (min-width: 45em) {	.page { border-width: .9em; } }
+@media (min-width: 72em) {	.page { border-width: 1em; } }
+
+/**
+ * Header
+ */
+
 .header {
-	float: left;
+	float: none;
 }
+
+@media (min-width: 45em) {	.header { float: left; max-width: 12em; width: 33%; } }
 
 .header__branding {
 	border: none;
+	margin: 0;
+	padding: 1.5em 0 0.3em;
 }
 
+@media (min-width: 45em) {	.header__branding {padding: 1.5em 0; } }
+
 .header__branding__logo {
-	background: url('plastichabitat-logo.svg') no-repeat top left;
+	background-image: url('plastichabitat-logo.svg');
+	background-position: top left;
+	background-repeat: no-repeat;
 	background-size: contain;
 	border: none;
 	display: block;
 	height: 0;
+	margin: 0 auto;
 	overflow: hidden;
 	padding: 3em 0 0 3em;
 	width: 0;
 }
 
+/**
+ * Navigation
+ */
+
+.navigation {
+	display: none;
+}
+
+@media (min-width: 45em) { .navigation { display: block; } }
+
 .navigation ul {
 	border-top: 1px solid #eee;
 	list-style: none;
-	line-height: 1.5em;
+	line-height: 1.8em;
 	padding: 0;
 }
 
@@ -134,12 +159,25 @@ pre code {
 	border-bottom: 1px solid #eee;
 	display: block;
 	padding: 0.5em;
+	text-align: right;
 }
 
+.navigation a.is-active {
+	border-bottom: 0.15em solid #F6AC00;
+	color: #F6AC00;
+}
+
+/**
+ * Content
+ */
+
 .content {
-	margin: 6em auto;
+	margin: 3em auto 6em;
 	max-width: 42em;
 }
+
+@media (min-width: 45em) {	.content { float: right; width: 66%; } }
+@media (min-width: 72em) {	.content { float: none; width: auto; } }
 
 .content__header h1,
 .content__header h2 {
@@ -160,8 +198,13 @@ pre code {
 	font-style: italic;
 }
 
+/**
+ * Footer
+ */
+
 .footer {
 	border-top: 1px solid #eee;
+	clear: both;
 	padding: 3em 0 1.5em;
 }
 
