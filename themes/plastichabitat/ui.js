@@ -1,35 +1,61 @@
+
+/**
+ * toggleClass
+ * Handles class toggling, you didn't see that one coming or did you?
+ */
+
+var navigationModal = function(targets, toggleClass, action) {
+
+    'use strict';
+
+    /**
+     * Get targets
+     */
+
+    var items = document.querySelectorAll(targets);
+
+    /**
+     * Set event listeners
+     */
+
+    [].forEach.call(items, function (item) {
+        item.addEventListener(action, toggleItem);
+    });
+
+    /**
+     * Toggle classes
+     */
+
+    function toggleItem(e) {
+
+        // Class list is supported, a modern browser!
+        if (this.classList) {
+            this.classList.toggle(toggleClass);
+
+        // Go the old fashion way...
+        } else {
+            var classes = el.className.split(' ');
+            var existingIndex = classes.indexOf(toggleClass);
+
+            if (existingIndex >= 0)
+                classes.splice(existingIndex, 1);
+            else
+                classes.push(toggleClass);
+
+            el.className = classes.join(' ');
+        }
+    }
+};
+
+/**
+ * UI
+ * All user interface related code.
+ */
+
 (function (window, document) {
 
-    var layout   = document.getElementById('layout'),
-        menu     = document.getElementById('menu'),
-        menuLink = document.getElementById('menuLink');
+    'use strict';
 
-    function toggleClass(element, className) {
-        var classes = element.className.split(/\s+/),
-            length = classes.length,
-            i = 0;
-
-        for(; i < length; i++) {
-          if (classes[i] === className) {
-            classes.splice(i, 1);
-            break;
-          }
-        }
-        // The className is not found
-        if (length === classes.length) {
-            classes.push(className);
-        }
-
-        element.className = classes.join(' ');
-    }
-
-    menuLink.onclick = function (e) {
-        var active = 'active';
-
-        e.preventDefault();
-        toggleClass(layout, active);
-        toggleClass(menu, active);
-        toggleClass(menuLink, active);
-    };
+    var navigation = new navigationModal('.navigation', '-open', 'click');
 
 }(this, this.document));
