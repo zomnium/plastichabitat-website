@@ -265,6 +265,10 @@ pre code {
 }
 
 .footer__content {
+	font-size: 0.81em;
+	line-height: 1.8em;
 	margin: 0 auto;
 	max-width: 42em;
 }
+
+@media (min-width: 45em) {	.footer__content { text-align: center; } }
