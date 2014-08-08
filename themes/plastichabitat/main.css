@@ -155,6 +155,8 @@ pre code {
 	z-index: 200;
 }
 
+@media (min-width: 45em) {	.navigation__toggle { display: none; } }
+
 .navigation__toggle__button {
 	font-size: 1.8em;
 	font-style: normal;
@@ -181,7 +183,7 @@ pre code {
 }
 
 .navigation.-open ul {
-	background-color: rgba(255, 255, 255, .93);
+	background-color: rgba(255, 255, 255, .96);
 	border: .75em solid #eee;
 	display: block;
 	position: fixed;
@@ -195,9 +197,9 @@ pre code {
 	-webkit-animation-name: overlay;
 	-o-animation-name: overlay;
 	animation-name: overlay;
-	-webkit-animation-duration: 3s;
-	-o-animation-duration: 3s;
-	animation-duration: 3s;
+	-webkit-animation-duration: 1.8s;
+	-o-animation-duration: 1.8s;
+	animation-duration: 1.8s;
 	-webkit-animation-timing-function: ease;
 	-o-animation-timing-function: ease;
 	animation-timing-function: ease;
