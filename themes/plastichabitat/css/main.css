@@ -125,7 +125,7 @@ pre code {
 @media (min-width: 45em) {	.header__branding {padding: 1.5em 0; } }
 
 .header__branding__logo {
-	background-image: url('plastichabitat-logo.svg');
+	background-image: url('../assets/plastichabitat-logo.svg');
 	background-position: top left;
 	background-repeat: no-repeat;
 	background-size: contain;
