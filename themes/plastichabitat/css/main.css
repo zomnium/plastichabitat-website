@@ -94,6 +94,16 @@ pre code {
 }
 
 /**
+ * Misc. block elements
+ */
+
+hr {
+	border: none;
+	border-top: 0.09em solid #eee;
+	margin: 3em 0;
+}
+
+/**
  * Layout
  */
 
