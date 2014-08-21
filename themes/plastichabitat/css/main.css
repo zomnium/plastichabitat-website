@@ -68,6 +68,11 @@ a:hover {
  * Lists
  */
 
+ol {
+	list-style-type: decimal-leading-zero;
+	padding-left: 1.8em;
+}
+
 ul {
 	list-style-type: circle;
 	padding-left: 1.2em;
