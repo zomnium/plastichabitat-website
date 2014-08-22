@@ -157,8 +157,88 @@ hr {
  * Navigation
  */
 
+/** Navigation - Overlay **/
+
+.navigation .navigation__items ul {
+	list-style: none;
+	line-height: 1.8;
+	padding: 0;
+}
+
+@media (max-width: 45em) {
+	.navigation .navigation__items {
+		background-color: rgba(255, 255, 255, .96);
+		border: .75em solid #eee;
+		margin: 0;
+		opacity: 0;
+		overflow: auto;
+		padding: 4.5em 1.5em;
+		position: fixed;
+		text-align: center;
+		top: 0; right: 0; left: 0; bottom: 0;
+		visibility: hidden;
+		z-index: 100;
+		-webkit-transition: opacity 0.5s, visibility, 0s 0.5s;
+		-o-transition: opacity 0.5s, visibility, 0s 0.5s;
+		transition: opacity 0.5s, visibility, 0s 0.5s;
+	}
+	.navigation.-open .navigation__items {
+		opacity: 1;
+		visibility: visible;
+		-webkit-transition: opacity 0.5s;
+		-o-transition: opacity 0.5s;
+		transition: opacity 0.5s;
+	}
+	.navigation .navigation__items ul {
+		opacity: 0.4;
+		-webkit-transform: translateY(-25%) rotateY(35deg);
+		-ms-transform: translateY(-25%) rotateY(35deg);
+		-o-transform: translateY(-25%) rotateY(35deg);
+		transform: translateY(-25%) rotateY(35deg);
+		-webkit-transition: transform 0.5s, opacity 0.5s;
+		-o-transition: transform 0.5s, opacity 0.5s;
+		transition: transform 0.5s, opacity 0.5s;
+	}
+	.navigation.-open .navigation__items ul {
+		opacity: 1;
+		-webkit-transform: rotateY(0deg);
+		-ms-transform: rotateY(0deg);
+		-o-transform: rotateY(0deg);
+		transform: rotateY(0deg);
+	}
+}
+
+@media (min-width: 45em) {
+	.navigation .navigation__items {
+		background-color: transparent;
+		border: none;
+		border-top: 0.09em solid #eee;
+		list-style: none;
+		line-height: 1.8;
+		opacity: 1;
+		padding: 0;
+		position: static;
+		text-align: right;
+		visibility: visible;
+	}
+}
+
+/** Navigation - Buttons **/
+
+.navigation a {
+	border-bottom: 0.09em solid #eee;
+	display: block;
+	padding: 0.5em;
+}
+
+.navigation a.is-active {
+	border-bottom: 0.15em solid #F6AC00;
+	color: #F6AC00;
+}
+
+/** Navigation - Toggle **/
+
 .navigation__toggle {
-	/*background-color: rgba(255, 255, 255, .9);*/
 	background-color: #eee;
 	cursor: pointer;
 	font-size: 1em;
@@ -175,69 +255,6 @@ hr {
 .navigation__toggle__button {
 	font-size: 1.8em;
 	font-style: normal;
-}
-
-@keyframes overlay {
-	0% {
-		display: none;
-		opacity: 0;
-	}
-
-	1% {
-		display: block;
-		opacity: 0;
-	}
-
-	100% {
-		opacity: 1;
-	}
-}
-
-.navigation ul {
-	display: none;
-}
-
-.navigation.-open ul {
-	background-color: rgba(255, 255, 255, .96);
-	border: .75em solid #eee;
-	display: block;
-	position: fixed;
-	top: 0; right: 0; left: 0; bottom: 0;
-	margin: 0;
-	padding: 4.5em 1.5em;
-	overflow: auto;
-	opacity: 1;
-	z-index: 100;
-	text-align: center;
-	-webkit-animation-name: overlay;
-	-o-animation-name: overlay;
-	animation-name: overlay;
-	-webkit-animation-duration: 1.8s;
-	-o-animation-duration: 1.8s;
-	animation-duration: 1.8s;
-	-webkit-animation-timing-function: ease;
-	-o-animation-timing-function: ease;
-	animation-timing-function: ease;
-}
-
-@media (min-width: 45em) { .navigation ul { display: block;	text-align: right; opacity: 1; } }
-
-.navigation ul {
-	border-top: 0.09em solid #eee;
-	list-style: none;
-	line-height: 1.8em;
-	padding: 0;
-}
-
-.navigation a {
-	border-bottom: 0.09em solid #eee;
-	display: block;
-	padding: 0.5em;
-}
-
-.navigation a.is-active {
-	border-bottom: 0.15em solid #F6AC00;
-	color: #F6AC00;
 }
 
 /**
