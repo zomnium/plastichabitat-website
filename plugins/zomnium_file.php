@@ -22,7 +22,7 @@ class Zomnium_File {
         {
             return 'unknown';
         }
-        return date( "F d Y H:i:s",
+        return date( "F d - Y, H:i:s",
                 filemtime($filepath)
             );
     }
