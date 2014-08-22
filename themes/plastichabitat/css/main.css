@@ -261,6 +261,8 @@ hr {
 @media (min-width: 45em) {	.content { float: right; width: 66%; } }
 @media (min-width: 72em) {	.content { float: none; width: auto; } }
 
+/** Content - Header **/
+
 .content__header h1,
 .content__header h2 {
 	border: none;
@@ -278,6 +280,17 @@ hr {
 	font-size: 1.5em;
 	font-weight: 400;
 	font-style: italic;
+}
+
+/** Content - Meta Footer **/
+
+.content__meta {
+	color: #c4beb8;
+	font-family: 'Playfair Display', serif;
+	font-size: 0.81em;
+	font-style: italic;
+	font-weight: 400;
+	padding: 3em 0 0;
 }
 
 /**
