@@ -4,20 +4,14 @@
  * Handles class toggling, you didn't see that one coming or did you?
  */
 
-var navigationModal = function(targets, toggleClass, action) {
+var toggleClass = function(targets, toggleClass, action) {
 
     'use strict';
 
-    /**
-     * Get targets
-     */
-
+    // Get targets
     var items = document.querySelectorAll(targets);
 
-    /**
-     * Set event listeners
-     */
-
+    // Set event listeners
     [].forEach.call(items, function (item) {
         item.addEventListener(action, toggleItem);
     });
@@ -56,6 +50,6 @@ var navigationModal = function(targets, toggleClass, action) {
 
     'use strict';
 
-    var navigation = new navigationModal('.navigation', '-open', 'click');
+    var navigation = new toggleClass('.navigation', '-open', 'click');
 
 }(this, this.document));
