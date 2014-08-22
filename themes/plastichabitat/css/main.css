@@ -36,7 +36,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1, h2 {
-	border-top: 1px solid #eee;
+	border-top: 0.06em solid #eee;
 	font-weight: 700;
 	margin-top: 2.4em;
 	padding-top: 1.8em;
@@ -223,14 +223,14 @@ hr {
 @media (min-width: 45em) { .navigation ul { display: block;	text-align: right; opacity: 1; } }
 
 .navigation ul {
-	border-top: 1px solid #eee;
+	border-top: 0.09em solid #eee;
 	list-style: none;
 	line-height: 1.8em;
 	padding: 0;
 }
 
 .navigation a {
-	border-bottom: 1px solid #eee;
+	border-bottom: 0.09em solid #eee;
 	display: block;
 	padding: 0.5em;
 }
@@ -276,7 +276,7 @@ hr {
  */
 
 .footer {
-	border-top: 1px solid #eee;
+	border-top: 0.09em solid #eee;
 	clear: both;
 	padding: 3em 0 1.5em;
 }
