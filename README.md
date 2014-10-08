@@ -1,6 +1,6 @@
-Pico
-====
 
-Pico is a stupidly simple, blazing fast, flat file CMS. See http://pico.dev7studios.com for more info.
+# Plastic Habitat
 
-[![I Love Open Source](http://www.iloveopensource.io/images/logo-lightbg.png)](http://www.iloveopensource.io/projects/524c55dcca7964c617000756)
+Playground for design and development. Please visit [PlasticHabitat.com](http://plastichabitat.com/).
+
+The Plastic Habitat content can be found on [zomnium/plastichabitat](https://github.com/zomnium/plastichabitat-website).
