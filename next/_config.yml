@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle: ''
-description: ''
-keywords:
-author: John Doe
+title: 'Plastic Habitat'
+subtitle: 'Playground for digital products, design and development.'
+description: 'Plastic Habitat is a reference and playground for digital product development, design and development.'
+keywords: 'Platic, Habitat, Digital, Products, Design, Development, JavaScript, Cloud, PHP, Website, Tools, Resources'
+author: Tim van Bergenhenegouwen
 language: en
 timezone: ''
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://example.com/child' and root as '/child/'
-url: http://example.com
+url: https://plastichabitat.com
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
