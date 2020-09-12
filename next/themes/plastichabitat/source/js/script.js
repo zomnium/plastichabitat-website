@@ -1,4 +1,19 @@
 (function($){
+
+  var layout = $('.layout');
+  $('.js-layout__toggleNavigation')
+    .on('click', () => {
+      console.log('toggle');
+      layout.toggleClass('-openNavigation');
+    });
+
+  var body = $('body');
+  $('.js-search__toggleSearch')
+    .on('click', () => {
+      console.log('toggle');
+      body.toggleClass('-openSearch');
+    });
+
   // Search
   var $searchWrap = $('#search-form-wrap'),
     isSearchAnim = false,

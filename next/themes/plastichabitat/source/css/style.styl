@@ -1,89 +1,229 @@
-@import "nib"
-@import "_variables"
-@import "_util/mixin"
-@import "_util/grid"
+// @import "nib"
+// @import "_variables"
+// @import "_util/mixin"
+// @import "_util/grid"
 
-global-reset()
+// global-reset()
 
-input, button
+// input, button
+//   margin: 0
+//   padding: 0
+//   &::-moz-focus-inner
+//     border: 0
+//     padding: 0
+
+// @font-face
+//   font-family: FontAwesome
+//   font-style: normal
+//   font-weight: normal
+//   src: url(font-icon-path + ".eot?v=#" + font-icon-version)
+//   src: url(font-icon-path + ".eot?#iefix&v=#" + font-icon-version) format("embedded-opentype"),
+//        url(font-icon-path + ".woff?v=#" + font-icon-version) format("woff"),
+//        url(font-icon-path + ".ttf?v=#" + font-icon-version) format("truetype"),
+//        url(font-icon-path + ".svg#fontawesomeregular?v=#" + font-icon-version) format("svg")
+
+// html, body, #container
+//   height: 100%
+
+// body
+//   background: color-background
+//   font: font-size font-sans
+//   -webkit-text-size-adjust: 100%
+
+// .outer
+//   clearfix()
+//   max-width: (column-width + gutter-width) * columns + gutter-width
+//   margin: 0 auto
+//   padding: 0 gutter-width
+
+// .inner
+//   column(columns)
+
+// .left, .alignleft
+//   float: left
+
+// .right, .alignright
+//   float: right
+
+// .clear
+//   clear: both
+
+// #container
+//   position: relative
+
+// .mobile-nav-on
+//   overflow: hidden
+
+// #wrap
+//   height: 100%
+//   width: 100%
+//   position: absolute
+//   top: 0
+//   left: 0
+//   transition: 0.2s ease-out
+//   z-index: 1
+//   background: color-background
+//   .mobile-nav-on &
+//     left: mobile-nav-width
+
+// if sidebar and sidebar isnt bottom
+//   #main
+//     @media mq-normal
+//       column(main-column)
+
+// if sidebar is left
+//   @media mq-normal
+//     #main
+//       float: right
+
+// @import "_extend"
+// @import "_partial/header"
+// @import "_partial/article"
+// @import "_partial/comment"
+// @import "_partial/archive"
+// @import "_partial/footer"
+// @import "_partial/highlight"
+// @import "_partial/mobile"
+
+// if sidebar
+//   @import "_partial/sidebar"
+
+// Brown: 3D2913
+// Grey: F9F9F9
+
+html, body
+  font-size: 100%
+  line-height: 1.2
   margin: 0
   padding: 0
-  &::-moz-focus-inner
-    border: 0
-    padding: 0
 
-@font-face
-  font-family: FontAwesome
-  font-style: normal
-  font-weight: normal
-  src: url(font-icon-path + ".eot?v=#" + font-icon-version)
-  src: url(font-icon-path + ".eot?#iefix&v=#" + font-icon-version) format("embedded-opentype"),
-       url(font-icon-path + ".woff?v=#" + font-icon-version) format("woff"),
-       url(font-icon-path + ".ttf?v=#" + font-icon-version) format("truetype"),
-       url(font-icon-path + ".svg#fontawesomeregular?v=#" + font-icon-version) format("svg")
+*, *:before, *:after
+  box-sizing: border-box
 
-html, body, #container
-  height: 100%
+p
+  margin 0
+  padding 0
 
-body
-  background: color-background
-  font: font-size font-sans
-  -webkit-text-size-adjust: 100%
 
-.outer
-  clearfix()
-  max-width: (column-width + gutter-width) * columns + gutter-width
-  margin: 0 auto
-  padding: 0 gutter-width
-
-.inner
-  column(columns)
-
-.left, .alignleft
-  float: left
-
-.right, .alignright
-  float: right
-
-.clear
-  clear: both
-
-#container
-  position: relative
-
-.mobile-nav-on
-  overflow: hidden
-
-#wrap
-  height: 100%
+.layout
   width: 100%
+
+  &__sidebars
+    position: fixed
+    display: flex
+    align-items: stretch
+    flex-direction: row
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    justify-content: space-between
+
+  &__navigation
+    background-color: #3D2913
+    color: #fff
+    width: 100%
+
+  &__tableOfContents
+    background-color: #F9F9F9
+    display: none
+    position: relative
+    width: 24em
+
+  &__page
+    background-color: #fff
+    transition: transform .9s ease-in-out
+    transform: translateX(0)
+    margin: 0 0 0 0.5em
+
+  &.-openNavigation &__page
+    transform: translateX(90vw)
+    transition: transform .6s ease-in-out
+
+
+  @media screen and (min-width: 52em)
+
+    &__navigation
+          width: 28.5em
+
+    &__tableOfContents
+      display: block
+
+    &__page
+      margin: 0 0 0 28.5em
+      transform: translateX(-24em)
+
+    &.-openNavigation &__page
+      transform: translateX(0)
+
+
+.navigation
+  display: flex
+  flex-direction: row
+  align-items: stretch
+  height: 100%
+
+  &__branding
+    border-right: 2px solid #fff
+    width: 4.5em
+
+  &__menu
+    flex-grow: 1
+
+
+.page
+  position: relative
+  padding: 0
+
+  &__header
+    background: #fff
+    position: sticky
+    top: 0
+    padding: 1em 0
+    border-bottom: 1px solid #3D2913
+
+  @media screen and (min-width 52em)
+    padding: 3em
+
+
+.tableOfContents
+  bottom: 3em
+  left: 2em
   position: absolute
-  top: 0
-  left: 0
-  transition: 0.2s ease-out
-  z-index: 1
-  background: color-background
-  .mobile-nav-on &
-    left: mobile-nav-width
+  opacity: 1
+  transform: translateY(0)
+  transition: .6s ease-in-out
 
-if sidebar and sidebar isnt bottom
-  #main
-    @media mq-normal
-      column(main-column)
+  .-openSearch &
+    opacity: 0
+    transform: translateY(calc(100% + 3em))
 
-if sidebar is left
-  @media mq-normal
-    #main
-      float: right
 
-@import "_extend"
-@import "_partial/header"
-@import "_partial/article"
-@import "_partial/comment"
-@import "_partial/archive"
-@import "_partial/footer"
-@import "_partial/highlight"
-@import "_partial/mobile"
+.search
 
-if sidebar
-  @import "_partial/sidebar"
+  &__field
+    position: relative
+    z-index: 1
+
+  &__results
+    position: absolute
+    top: 3.25em
+    left: 0
+    right: 0
+    height: calc(100vh - 3.25em)
+    max-height: 0
+    background-color: #fff
+    z-index: -1
+    overflow: hidden
+    opacity: 0
+    transition:
+      opacity .6s ease-in-out,
+      max-height .9s ease-in-out
+
+  .-openSearch &__results
+    max-height: 100vh
+    opacity: 1
+
+
+.-openSearch
+  overflow: hidden
