@@ -217,12 +217,15 @@ p
     overflow: hidden
     opacity: 0
     transition:
-      opacity .6s ease-in-out,
-      max-height .9s ease-in-out
+      opacity .6s ease-out,
+      max-height 1.8s ease-in-out
 
   .-openSearch &__results
     max-height: 100vh
     opacity: 1
+    transition:
+      opacity .6s ease-in-out,
+      max-height .9s ease-in-out
 
 
 .-openSearch
