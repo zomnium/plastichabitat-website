@@ -1,0 +1,31 @@
+
+.search
+
+  &__field
+    position: relative
+    z-index: 1
+
+  &__results
+    background-color: #fff
+    height: calc(100vh - 3.25em)
+    left: 0
+    max-height: 0
+    opacity: 0
+    overflow: hidden
+    position: absolute
+    right: 0
+    top: 3.25em
+    transition:
+      opacity .6s ease-out,
+      max-height 1.8s ease-in-out
+    z-index: -1
+
+  .-openSearch &__results
+    opacity: 1
+    max-height: 100vh
+    transition:
+      opacity .6s ease-in-out,
+      max-height .9s ease-in-out
+
+.-openSearch
+  overflow: hidden

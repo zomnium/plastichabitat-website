@@ -1,0 +1,51 @@
+
+.layout
+  width: 100%
+
+  &__sidebars
+    align-items: stretch
+    bottom: 0
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    left: 0
+    position: fixed
+    right: 0
+    top: 0
+
+  &__navigation
+    background-color: #3D2913
+    color: #fff
+    width: 100%
+
+  &__tableOfContents
+    background-color: #F9F9F9
+    display: none
+    position: relative
+    width: 24em
+
+  &__page
+    background-color: #fff
+    margin: 0 0 0 0.5em
+    transform: translateX(0)
+    transition: transform .9s ease-in-out
+
+  &.-openNavigation &__page
+    transform: translateX(90vw)
+    transition: transform .6s ease-in-out
+
+
+  @media screen and (min-width: 52em)
+
+    &__navigation
+      width: 28.5em
+
+    &__tableOfContents
+      display: block
+
+    &__page
+      margin: 0 0 0 28.5em
+      transform: translateX(-24em)
+
+    &.-openNavigation &__page
+      transform: translateX(0)
