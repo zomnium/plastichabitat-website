@@ -2,7 +2,8 @@
 
   var layout = $('.layout');
   $('.js-layout__toggleNavigation')
-    .on('click', () => {
+    .on('click', (e) => {
+      e.preventDefault();
       console.log('toggle');
       layout.toggleClass('-openNavigation');
     });

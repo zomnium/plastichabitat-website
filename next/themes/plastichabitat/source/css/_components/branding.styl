@@ -1,0 +1,64 @@
+
+.branding
+  align-items: center
+  display: flex
+  flex-direction: column-reverse
+  height: 100%
+  justify-content: space-between
+  padding: 3em 0 2em
+  width: 100%
+
+  &__menuToggle
+    font-size: 1em
+    height: 0
+    margin: 0
+    outline: none
+    overflow: hidden
+    padding: 2em 0 0 2em
+    position: relative
+    transition: transform .6s ease-in-out
+    width: 0
+
+    &:after,
+    &:before
+      background-position: center
+      background-repeat: no-repeat
+      position: absolute
+      bottom: 0
+      content: ''
+      display: block
+      left: 0
+      right: 0
+      top: 0
+      transition: opacity .6s ease-in-out
+
+    &:after
+      background-image: url('/css/assets/close.svg')
+      opacity: 0
+
+    &:before
+      background-image: url('/css/assets/navigation.svg')
+      opacity: 1
+
+  &__title
+    width: 100%
+
+  &__siteName
+    font-size: 1.2em
+    font-weight: normal
+    line-height: 1
+    margin: 0
+    padding: 0
+    transform: rotate(-90deg)
+    transform-origin: 14% 0%
+    width: 9em
+
+
+  .-openNavigation &__menuToggle
+    transform: rotate(180deg)
+
+    &:after
+      opacity: 1
+
+    &:before
+      opacity: 0
