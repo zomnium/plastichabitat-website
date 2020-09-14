@@ -12,3 +12,16 @@
 @import "_components/page"
 @import "_components/search"
 @import "_components/table-of-contents"
+
+
+.menu
+  opacity: 0
+  transform: translateX(-3em)
+  transition: opacity .9s ease-out,
+    transform 1.2s ease-out
+
+  .-openNavigation &
+    opacity: 1
+    transform: translateX(0)
+    transition: opacity .9s ease-in,
+      transform .6s ease-in-out
