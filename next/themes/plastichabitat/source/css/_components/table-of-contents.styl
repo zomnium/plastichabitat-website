@@ -5,8 +5,11 @@
   opacity: 1
   position: absolute
   transform: translateY(0)
-  transition: .6s ease-in-out
+  transition: opacity .9s ease-in,
+    transform 1.2s ease-in-out
 
   .-openSearch &
     opacity: 0
     transform: translateY(calc(100% + 3em))
+    transition: opacity .6s ease-in-out,
+      transform .9s ease-in-out
