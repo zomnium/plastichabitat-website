@@ -1,69 +1,3 @@
-<%- partial('_partial/head') %>
-<body>
-
-  <div class="layout">
-    <div class="layout__sidebars">
-      <div class="layout__navigation">
-
-        <div class="navigation">
-          <div class="navigation__branding">
-
-            <div class="branding">
-              <div class="branding__title">
-                <h1 class="branding__siteName"><%= config.title %></h1>
-              </div>
-              <a href="#" class="branding__menuToggle js-layout__toggleNavigation">Toggle navigation</a>
-            </div><!-- .branding -->
-
-          </div><!-- .navigation__branding -->
-          <div class="navigation__menu">
-
-            <%- partial('_partial/menu') %>
-    
-          </div><!-- .navigation__menu -->
-        </div><!-- .navigation -->
-
-      </div><!-- .layout__navigation -->
-      <aside class="layout__tableOfContents">
-
-        <div class="tableOfContents">
-          <p>Contents</p>
-        </div>
-
-      </aside><!-- .layout__tableOfContents -->
-    </div><!-- .layout__sidebars -->
-    <div class="layout__page">
-
-      <div class="page">
-        <div class="page__header">
-
-          <header class="header">
-            <div class="header__mobileNavigationToggle">
-
-              <span class="js-layout__toggleNavigation">M</span>
-
-            </div><!-- .header__mobileNavigationToggle -->
-            <div class="header__search">
-
-              <div class="search">
-                <div class="search__field">
-                  <span class="js-search__toggleSearch"><i>Search for something</i></span>
-                  <input type="text" class="js-search__field">
-                  <button class="js-search__close">&cross;</button>
-                </div>
-                <div class="search__results js-search__results"></div>
-              </div><!-- .search -->
-
-            </div><!-- .header__search -->
-            <div class="header__logo">
-
-              <div class="logo"><%= config.title %> logo</div>
-
-            </div><!-- .header__logo -->
-          </header><!-- .header -->
-
-        </div><!-- .page__header -->
-        <main class="page__content">
 
           <article class="article">
             <header class="article__header">
@@ -123,18 +57,23 @@
             </div><!-- .article__content -->
           </article><!-- .article -->
 
-        </main>
-        <footer class="page__footer">
 
-          <p>Page footer</p>
 
-        </footer><!-- .page__footer -->
-      </div><!-- .page -->
 
-    </div><!-- .layout__page -->
-  </div><!-- .layout -->
 
-  <script src="/js/script.js"></script>
+<!-- 
 
-</body>
-</html>
+  <div id="container">
+    <div id="wrap">
+      <%- partial('_partial/header', null, {cache: !config.relative_link}) %>
+      <div class="outer">
+        <section id="main"><%- body %></section>
+        <% if (theme.sidebar && theme.sidebar !== 'bottom'){ %>
+          <%- partial('_partial/sidebar', null, {cache: !config.relative_link}) %>
+        <% } %>
+      </div>
+      <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
+    </div>
+    <%- partial('_partial/mobile-nav', null, {cache: !config.relative_link}) %>
+    <%- partial('_partial/after-footer') %>
+  </div> -->

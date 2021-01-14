@@ -1,1 +1,14 @@
-<%- partial('_partial/article', {post: page, index: false}) %>
+
+<article class="article">
+  <header class="article__header">
+    <h2 class="article__title"><%= page.title %></h2>
+    <% if (page.subtitle){ %><h3 class="article__subtitle"><%= page.subtitle %></h3><% } %>
+  </header><!-- .article__header -->
+  <div class="article__content">
+
+    <div class="wysiwyg">
+      <%- page.content %>
+    </div><!-- .wysiwyg-->
+
+  </div><!-- .article__content -->
+</article><!-- .article -->
