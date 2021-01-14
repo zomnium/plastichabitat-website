@@ -1,0 +1,10 @@
+
+<nav class="menu">
+  <ul class="menu__items">
+    <% for (var i in theme.menu) { %>
+      <li class="menu__item">
+        <a href="<%- url_for(theme.menu[i]) %>" class="menu__link"><%= i %></a>
+      </li>
+    <% } %>
+  </ul><!-- .menu__items -->
+</nav><!-- .menu -->

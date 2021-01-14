@@ -8,6 +8,7 @@
 // Components
 @import "_components/branding"
 @import "_components/layout"
+@import "_components/menu"
 @import "_components/navigation"
 @import "_components/page"
 @import "_components/search"
@@ -16,19 +17,6 @@
 
 // *
 //   border 1px solid black
-
-
-.menu
-  opacity: 0
-  transform: translateX(-3em)
-  transition: opacity .9s ease-out,
-    transform 1.2s ease-out
-
-  .-openNavigation &
-    opacity: 1
-    transform: translateX(0)
-    transition: opacity .9s ease-in,
-      transform .6s ease-in-out
 
 
 .header
