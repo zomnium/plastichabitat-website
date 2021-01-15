@@ -1,6 +1,6 @@
 ---
 title: Plastic Habitat
-subtitle: Playground for product development, design and development.
+description: Playground for product development, design and development.
 ---
 
 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis, iure? Totam consequuntur veniam rerum facilis dolores soluta quibusdam debitis, eos ut, deserunt ratione fugit? Repudiandae, assumenda rerum. Ducimus, aliquam eligendi?

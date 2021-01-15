@@ -2,7 +2,10 @@
 menu:
   Home: /
   Articles: /articles
-  Archives: /archives
+  Javascript: /javascript
+  Resources: /resources
+  Tools: /tools
+  Workflows: /workflows
 rss: /atom.xml
 
 # Content
