@@ -1,21 +1,24 @@
 import { fromEvent, interval, merge, combineLatest, of, Observable } from 'rxjs';
 import { ajax } from 'rxjs/ajax';
-import { tap, scan, take, filter, startWith, map, first, debounce, debounceTime, switchMap, concatMap, mapTo, distinctUntilChanged, mergeMap, withLatestFrom, share, pluck, skipWhile } from 'rxjs/operators';
+import { tap, scan, take, filter, startWith, map, first, debounce, debounceTime, switchMap, concatMap, mapTo, distinctUntilChanged, mergeMap, withLatestFrom, share, pluck, skipWhile, throttleTime } from 'rxjs/operators';
 
-import { component, selector, toggleClass, addClass, removeClass } from 'powrrr';
+import { component, selector, toggleClass, addClass, removeClass, wait } from 'powrrr';
 
 (() => {
 
   const body = component(element => of(element))(selector('body'));
   const layoutComponent = component(element => of(element))(selector('.layout'));
+  const pageContentComponent = component(element => of(element))(selector('#content'));
+
+
+  /** Navigation */
 
   const toggleComponent = (toggleElements, target, className) => merge(
     component(element =>
-      combineLatest(
+      combineLatest([
         target,
         fromEvent(element, 'click'),
-      ).pipe(
-        // tap(([layout, event]) => console.log('layout', layout, 'event', event)),
+      ]).pipe(
         tap(([_, event]) => event.preventDefault()),
         tap(([item, _]) => toggleClass(item, className)),
       )
@@ -35,7 +38,94 @@ import { component, selector, toggleClass, addClass, removeClass } from 'powrrr'
   ).subscribe();
 
 
+  /** Table of Contents */
 
+  // TODO
+  // - [ ] is in view state
+  // - [ ] scroll to offset
+  // https://spigotdesign.com/smooth-scroll-offset-anchor-links-with-css/
+
+  // Get headlines
+  // Get offset Y (size changes)
+
+  // Get scroll position
+  // Get screenheight (size changes)
+
+  // Combine headlines + scroll/screen + tableOfContents (is rendered)
+  // See which headlines are below: screen offset Y + (screen height / 3 * 2)
+  // Get last headline in array - is active headline { element, index }
+
+  // Get active headline: distinct
+  // Reset tableOfContents
+  // Set active tableOfContents
+
+  const templateTableOfContents = (items) => `
+    <div class="tableOfContents">
+      <ul class="tableOfContents__items">
+        ${items}
+      </ul>
+    </div>
+  `;
+  const templateTableOfContentsItem = (item) => `
+    <li class="tableOfContents__item">
+      <a class="tableOfContents__link" href="#${item['id']}">${item['title']}</a>
+    </li>
+  `;
+
+  const renderTemplate = (template, items) => items
+    .map(item => template(item))
+    .reduce((result, item) => result += item);
+
+
+  const pageScroll = fromEvent(document, 'scroll').pipe(
+    throttleTime(20),
+    // tap(() => console.log('scroll')),
+    share(),
+  );
+  const inView = () => (events) => events.pipe(
+    map(element => {
+      // const thing = element.getBoundingClientRect();
+      // console.log('thing', thing);
+      const result = !!(
+        element.offsetTop >= window.pageYOffset
+        && element.offsetTop <= (window.pageYOffset + window.innerHeight)
+      );
+      console.log('inView: result', element, result, window.innerHeight, element.offsetTop, window.pageYOffset);
+      return result;
+    }),
+    distinctUntilChanged(),
+  );
+
+  const tableOfContentsContent = pageContentComponent.pipe(
+    map(pageContent => selector(pageContent, 'h2')),
+    map(headlines => Array.from(headlines)),
+    map(headlines => headlines.map(headline => ({
+      id: headline.getAttribute('id'),
+      title: headline.textContent,
+      element: headline,
+    }))),
+    map(headlines => renderTemplate(templateTableOfContentsItem, headlines)),
+    map(headlines => templateTableOfContents(headlines)),    
+  );
+  const tableOfContentsTarget = component(element => of(element))(selector('.layout__tableOfContents'));
+  const tableOfContentsComponent = combineLatest([tableOfContentsTarget, tableOfContentsContent])
+    .subscribe(([parent, content]) => parent.innerHTML = content);
+
+  const cardComponent = component(element =>
+    pageScroll.pipe(
+      mapTo(element),
+      inView(),
+      mapTo(element),
+    )
+  );
+
+  const cardsComponent = cardComponent(selector('#content h2')).pipe(
+    concatMap(wait(180)),
+    tap(element => addClass(element, '-in-view')),
+  ).subscribe();
+
+
+  /** Search */
 
   const templateSearchResults = (results) => `
     <ul>${results}</ul>

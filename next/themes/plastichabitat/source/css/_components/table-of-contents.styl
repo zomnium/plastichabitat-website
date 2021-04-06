@@ -13,3 +13,24 @@
     transform: translateY(calc(100% + 3em))
     transition: opacity .6s ease-in-out,
       transform .9s ease-in-out
+
+  &__items
+    font-size: .9em
+    list-style: none
+    margin: 0
+    padding: 0
+
+  &__link
+    color: inherit
+    display: inline-block
+    opacity: .6
+    text-decoration: none
+    transform: translateX(0)
+    transition: transform .6s ease-out,
+      opacity .9s ease-out
+
+    &:hover
+      opacity: 1
+      transform: translateX(.18em)
+      transition: transform .45s ease-in-out,
+        opacity .3s ease-in

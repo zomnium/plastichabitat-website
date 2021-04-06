@@ -7,11 +7,21 @@ html, body
   margin: 0
   padding: 0
 
+html
+  scroll-behavior: smooth
+
 body
   overflow-x: hidden // Prevent layout overflow on mobile
 
 *, *:before, *:after
   box-sizing: border-box
+
+// Should add a margin to the scroll target (it doesn't)
+:target:before
+  content: ''
+  display: block
+  height: 200px
+  margin: -200px 0 0
 
 // input, button
 //   margin: 0

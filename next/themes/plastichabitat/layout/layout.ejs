@@ -10,7 +10,7 @@
 
             <div class="branding">
               <div class="branding__title">
-                <h1 class="branding__siteName"><%= config.title %></h1>
+                <h2 class="branding__siteName"><%= config.title %></h2>
               </div>
               <a href="#" class="branding__menuToggle js-layout__toggleNavigation">Toggle navigation</a>
             </div><!-- .branding -->
@@ -26,9 +26,7 @@
       </div><!-- .layout__navigation -->
       <aside class="layout__tableOfContents">
 
-        <div class="tableOfContents">
-          <p>Contents</p>
-        </div>
+        <!-- client side generated -->
 
       </aside><!-- .layout__tableOfContents -->
     </div><!-- .layout__sidebars -->
@@ -63,7 +61,7 @@
           </header><!-- .header -->
 
         </div><!-- .page__header -->
-        <main class="page__content">
+        <main class="page__content" id="content">
 
           <%- body %>
 
