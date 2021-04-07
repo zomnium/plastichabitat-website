@@ -30,9 +30,17 @@
     transform: translateX(0)
     transition: transform .9s ease-in-out
 
+  &__pageContent
+    opacity: 1
+    transition: .3s ease-in opacity 
+
   &.-openNavigation &__page
     transform: translateX(90vw)
     transition: transform .6s ease-in-out
+
+  &.-openNavigation &__pageContent
+    opacity: 0
+    transition: .3s ease-out opacity 
 
 
   @media screen and (min-width: 52em)
@@ -58,6 +66,8 @@
       //   top: 0
       //   z-index: 9
 
+    &__pageContent
+      opacity: 1 !important
 
     &.-openNavigation &__page
       transform: translateX(0)

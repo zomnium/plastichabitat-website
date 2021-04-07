@@ -31,58 +31,60 @@
       </aside><!-- .layout__tableOfContents -->
     </div><!-- .layout__sidebars -->
     <div class="layout__page">
+      <div class="layout__pageContent">
 
-      <div class="page">
-        <div class="page__header">
+        <div class="page">
+          <div class="page__header">
 
-          <header class="header">
-            <div class="header__mobileNavigationToggle">
+            <header class="header">
+              <div class="header__mobileNavigationToggle">
 
-              <span class="js-layout__toggleNavigation">M</span>
+                <span class="js-layout__toggleNavigation mobileNavigationToggle">Toggle navigation</span>
 
-            </div><!-- .header__mobileNavigationToggle -->
-            <div class="header__search">
+              </div><!-- .header__mobileNavigationToggle -->
+              <div class="header__search">
 
-              <!-- <div class="search">
-                <div class="search__field">
-                  <span class="js-search__toggleSearch"><i>Search for something</i></span>
-                  <input type="text" class="js-search__field">
-                  <button class="js-search__close">&cross;</button>
-                </div>
-                <div class="search__results js-search__results"></div>
-              </div>--><!-- .search -->
+                <!-- <div class="search">
+                  <div class="search__field">
+                    <span class="js-search__toggleSearch"><i>Search for something</i></span>
+                    <input type="text" class="js-search__field">
+                    <button class="js-search__close">&cross;</button>
+                  </div>
+                  <div class="search__results js-search__results"></div>
+                </div>--><!-- .search -->
 
-            </div><!-- .header__search -->
-            <div class="header__logo">
+              </div><!-- .header__search -->
+              <div class="header__logo">
 
-              <div class="logo"><%= config.title %> logo</div>
+                <div class="logo"><%= config.title %> logo</div>
 
-            </div><!-- .header__logo -->
-          </header><!-- .header -->
+              </div><!-- .header__logo -->
+            </header><!-- .header -->
 
-        </div><!-- .page__header -->
-        <main class="page__content" id="content">
+          </div><!-- .page__header -->
+          <main class="page__content" id="content">
 
-          <%- body %>
+            <%- body %>
 
-        </main><!-- .page__content -->
-        <footer class="page__footer">
+          </main><!-- .page__content -->
+          <footer class="page__footer">
 
-          <div class="footer">
-            <div class="footer__content wysiwyg">
+            <div class="footer">
+              <div class="footer__content wysiwyg">
 
-              <p>
-                  Plastic Habitat is a playground for digital products, design and development.<br />
-                  All the content is available on GitHub, <a href="https://github.com/zomnium/plastichabitat">Plastic Habitat on GitHub</a>.
-              </p>
-              <p><small>A project by <a href="https://slurfhondje.nl/">Tim van Bergenhenegouwen</a> from <a href="https://zomnium.com/">Zomnium</a>.</small></p>
+                <p>
+                    Plastic Habitat is a playground for digital products, design and development.<br />
+                    All the content is available on GitHub, <a href="https://github.com/zomnium/plastichabitat">Plastic Habitat on GitHub</a>.
+                </p>
+                <p><small>A project by <a href="https://slurfhondje.nl/">Tim van Bergenhenegouwen</a> from <a href="https://zomnium.com/">Zomnium</a>.</small></p>
 
-            </div><!-- .footer__content -->
-          </div><!-- .footer -->
+              </div><!-- .footer__content -->
+            </div><!-- .footer -->
 
-        </footer><!-- .page__footer -->
-      </div><!-- .page -->
+          </footer><!-- .page__footer -->
+        </div><!-- .page -->
 
+      </div><!-- .layout__pageContent -->
     </div><!-- .layout__page -->
   </div><!-- .layout -->
 
