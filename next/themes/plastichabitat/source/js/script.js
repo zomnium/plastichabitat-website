@@ -1,6 +1,6 @@
-import { fromEvent, interval, merge, combineLatest, of, Observable } from 'rxjs';
+import { fromEvent, merge, combineLatest, of } from 'rxjs';
 import { ajax } from 'rxjs/ajax';
-import { tap, scan, take, filter, startWith, map, first, debounce, debounceTime, switchMap, concatMap, mapTo, distinctUntilChanged, mergeMap, withLatestFrom, share, pluck, skipWhile, throttleTime } from 'rxjs/operators';
+import { tap, scan, filter, startWith, map, debounceTime, concatMap, mapTo, distinctUntilChanged, share, pluck, throttleTime } from 'rxjs/operators';
 
 import { component, selector, toggleClass, addClass, removeClass, wait } from 'powrrr';
 
