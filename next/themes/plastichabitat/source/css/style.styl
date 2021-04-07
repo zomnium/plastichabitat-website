@@ -6,8 +6,12 @@
 @import "_base"
 
 // Components
+@import "_components/article"
 @import "_components/branding"
+@import "_components/footer"
+@import "_components/header"
 @import "_components/layout"
+@import "_components/logo"
 @import "_components/menu"
 @import "_components/navigation"
 @import "_components/page"
@@ -15,100 +19,5 @@
 @import "_components/table-of-contents"
 @import "_components/wysiwyg"
 
-
 // *
 //   border 1px solid black
-
-
-.header
-  display: flex
-  flex-direction: row
-  border-bottom: 1px solid #3D2913
-  padding: 1em 0
-
-  &__search
-    flex-grow: 1
-
-  &__logo
-    position: relative
-    width: 1.8em
-    line-height: 1
-
-  @media screen and (min-width: 52em)
-    border: none
-    padding: 1.2em 0 0
-
-    &__mobileNavigationToggle
-      display: none
-
-    &__search
-      margin: 0 6% 0 24%
-      border-bottom: 1px solid #3D2913
-
-    &__logo
-      width: 4em
-
-
-.logo
-  padding: 100% 0 0 100%
-  overflow: hidden
-  width: 0
-  height: 0
-  background-image: url('/css/assets/plastichabitat-logo.svg')
-  background-repeat: no-repeat
-  background-position: center
-  background-size: contain
-
-
-.article
-  padding: 18vh 0 0
-
-  &__header
-    font-family: font-primary
-    margin: 0 0 1.8em
-
-  &__title
-    font-size: 2.1em
-    font-weight: bold
-    line-height: 1
-    margin: 0 0 .24em
-
-  &__description
-    font-size: 1.2em
-    font-weight: normal
-    font-style: italic
-    line-height: 1.5
-    margin: 0 0 1em
-
-  &__content
-    max-width: 45em
-
-  @media screen and (min-width 52em)
-    padding: 33vh 0 0
-
-    &__header
-      font-family: font-primary
-      margin: 0 0 4.5vw
-      padding: 0 6%
-
-    &__title
-      font-size: 6vw
-
-    &__description
-      font-size: 2vw
-      line-height: 1.5
-
-    &__content
-      margin: 0 12% 11vh 24%
-      font-size: 1.12em
-
-
-.footer
-
-  &__content
-    max-width 45em
-
-  @media screen and (min-width 52em)
-
-    &__content
-      margin: 0 12% 0 24%

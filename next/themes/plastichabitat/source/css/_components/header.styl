@@ -1,0 +1,28 @@
+
+.header
+  display: flex
+  flex-direction: row
+  border-bottom: 1px solid #3D2913
+  padding: 1em 0
+
+  &__search
+    flex-grow: 1
+
+  &__logo
+    position: relative
+    width: 1.8em
+    line-height: 1
+
+  @media screen and (min-width: 52em)
+    border: none
+    padding: 1.2em 0 0
+
+    &__mobileNavigationToggle
+      display: none
+
+    &__search
+      margin: 0 6% 0 24%
+      border-bottom: 1px solid #3D2913
+
+    &__logo
+      width: 4em
