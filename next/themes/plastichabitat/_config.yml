@@ -1,7 +1,7 @@
 # Header
 menu:
   Home: /
-  Articles: /articles
+  # Articles: /articles
   Javascript: /javascript
   Resources: /resources
   Tools: /tools
